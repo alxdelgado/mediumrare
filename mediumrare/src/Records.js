@@ -9,6 +9,9 @@ class Records extends Component {
       return (
          <div>
             <h2>Records</h2>
+            <div className='recordsContainer fl w-100 pa2 bg-light'>
+
+            </div>
          </div>
       )
    }
