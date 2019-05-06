@@ -1,8 +1,15 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
+// body parser
+app.use(bodyParser.json());
+
+
+app.get('/https://api.discogs.com/users/alexdelgado/collection/folders', (req, res) => {
+
+   console.log(req.body);
    res.status(200).send('We have a message!')
 });
 
