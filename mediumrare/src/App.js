@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Home.js';
 import Records from './Records.js';
 import News from './News.js';
 import Artists from './Artists.js';
-
-
 
 class App extends Component {
    render() {
