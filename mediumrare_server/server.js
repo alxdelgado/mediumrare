@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const knex = require('knex');
 
+// knex.js connecting to our mediumrare_database.
 const db = knex({
    client: 'pg',
    connection: {
@@ -13,12 +14,6 @@ const db = knex({
       database: "mediumrare_database"
    }
 });
-
-// db
-//    .select('*')
-//    .from('vinyl_information')
-//    .then(data => console.log(data));
-
 
 const app = express();
 const port = 3001;
@@ -34,13 +29,22 @@ app.use(
 // get route --> my collection of records.
 app.get('/mediumrare_database', (req, res) => {
    db.select('*').from('vinyl_information').then(data => console.log(data));
-   console.log(req.body);
-   res.status(200).json('We have a message!')
+   res.status(200).json('Getting some records')
+});
+
+// Login --- post route
+app.post('/login', (req,res) => {
+   res.json('logging in')
+});
+
+// Register user ----> post route
+app.post('/register', (req, res) => {
+   res.json('user registering')
 });
 
 
 
-
+// port
 app.listen(port, () => {
    console.log(`Xray is listening on port ${port}!`)
 });

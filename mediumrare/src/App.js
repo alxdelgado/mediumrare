@@ -5,6 +5,8 @@ import Home from './Home.js';
 import Records from './Records.js';
 import News from './News.js';
 import Artists from './Artists.js';
+import Login from './Login.js';
+import Register from './Register.js';
 
 class App extends Component {
    render() {
@@ -18,6 +20,8 @@ class App extends Component {
                      <li><Link to={'/Records'} className="nav-link">Records</Link></li>
                      <li><Link to={'/Artists'} className="nav-link">Artists</Link></li>
                      <li><Link to={'/News'} className="nav-link">News</Link></li>
+                     <li><Link to={'/Login'} className="nav-link">Login</Link></li>
+                     <li><Link to={'/Register'} className="nav-link">Register</Link></li>
                   </ul>
                </nav>
                <Switch>
@@ -25,6 +29,8 @@ class App extends Component {
                   <Route path="/Records" component={Records} />
                   <Route path="/Artists" component={Artists} />
                   <Route path="/News" component={News} />
+                  <Route path="/Login" component={Login} />
+                  <Route path="/Register" component={Register} />
                </Switch>
             </div>
          </Router>
