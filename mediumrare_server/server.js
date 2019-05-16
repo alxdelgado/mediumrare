@@ -1,4 +1,6 @@
 const express = require('express');
+const bcrypt = require('bcrypt.js');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const knex = require('knex');
@@ -18,6 +20,9 @@ const db = knex({
 const app = express();
 const port = 3001;
 
+
+// middleware
+
 // body parser
 app.use(bodyParser.json());
 app.use(
@@ -26,6 +31,11 @@ app.use(
   })
 )
 
+// cors
+app.use(cors());
+
+
+
 // get route --> my collection of records.
 app.get('/mediumrare_database', (req, res) => {
    db.select('*').from('vinyl_information').then(data => console.log(data));
@@ -33,14 +43,22 @@ app.get('/mediumrare_database', (req, res) => {
 });
 
 // Login --- post route
-app.post('/login', (req,res) => {
-   res.json('logging in')
+app.post('/mediumrare_database', async (req, res, next) => {
+   try {
+      db.select('*').from('user_info').then(console.log());
+      res.status(200).json('logging in')
+   } catch (err) {
+      res.send(err)
+   }
 });
 
 // Register user ----> post route
-app.post('/register', (req, res) => {
-   res.json('user registering')
-});
+// app.post('/register', (req, res) => {
+//    // hashing the password
+//    bcrypt.hash('bacon', 8, function(err, hash) {
+// });
+//    res.json('user registering')
+// });
 
 
 
