@@ -2,7 +2,7 @@ FROM node:latest
 
 WORKDIR /Users/Alex/funky-ducks/mediumrare/mediumrare
 
-COPY ./ ./
+COPY ./ ./ 
 
 RUN  npm install
 
