@@ -1,0 +1,20 @@
+{
+  "name": "mediumrare",
+  "version": "1.0.0",
+  "description": "Record store application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxdelgado/mediumrare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alxdelgado/mediumrare/issues"
+  },
+  "homepage": "https://github.com/alxdelgado/mediumrare#readme"
+}

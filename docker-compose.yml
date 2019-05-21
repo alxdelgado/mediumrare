@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+   mediumrare_docker:
+      container_name: container001
+      build: /Users/Alex/funky-ducks/mediumrare/mediumrare
+      command: npm start
+      ports:
+         - "3000:3000"
