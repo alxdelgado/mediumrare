@@ -20,7 +20,9 @@
     "nodemon": "^1.19.0",
     "pg": "^7.11.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+     "querystringify": ">=2.0.0"
+ },
   "keywords": [],
   "description": ""
 }

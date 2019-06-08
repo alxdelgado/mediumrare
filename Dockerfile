@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["/bin/bash", "start"]
+CMD ["/bin/bash", "npm", "start"]
