@@ -1,9 +1,13 @@
 FROM node:latest
 
-WORKDIR /Users/Alex/funky-ducks/mediumrare/mediumrare
+WORKDIR /Users/Alex/funky-ducks/mediumrare/mediumrare/mediumrare_server
 
-COPY ./ ./ 
+COPY package*.json ./
 
 RUN  npm install
 
-CMD ["/bin/bash"]
+COPY . .
+
+EXPOSE 8080
+
+CMD ["/bin/bash", "start"]

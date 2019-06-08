@@ -4,6 +4,7 @@
   "description": "Record store application.",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/alxdelgado/mediumrare/issues"
   },
-  "homepage": "https://github.com/alxdelgado/mediumrare#readme"
+  "homepage": "https://github.com/alxdelgado/mediumrare#readme",
+  "devDependencies": {
+    "querystringify": "^2.1.1"
+  }
 }
