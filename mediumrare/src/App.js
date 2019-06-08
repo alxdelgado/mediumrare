@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Home.js';
-import Records from './Records.js';
+import Records from './Records/Records.js';
 import News from './News.js';
 import Artists from './Artists.js';
-import Login from './Login.js';
+import Login from './Login/Login.js';
 import Register from './Register.js';
 
 class App extends Component {

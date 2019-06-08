@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/alxdelgado/mediumrare#readme",
   "devDependencies": {
+    "make-runnable": "^1.3.6",
     "querystringify": ">=2.0.0"
   }
 }
