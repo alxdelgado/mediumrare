@@ -45,8 +45,8 @@ app.get('/mediumrare_database', async (req, res, next) => {
    }
 });
 
-// Login ---> post route
-app.post('/mediumrare_database', async (req, res, next) => {
+// post route ---> Login
+app.use('/mediumrare_database', async (req, res, next) => {
    try {
       db.select('*').from('user_info').then(console.log());
       res.status(200).json('logging in')
