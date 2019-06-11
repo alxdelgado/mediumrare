@@ -4,6 +4,27 @@ import React, {Component} from 'react';
 
 
 class Records extends Component {
+   constructor(props){
+      super();
+      this.state = {
+         title: [],
+         artist: [],
+         genre:[],
+         price: [],
+         condition: []
+      }
+   }
+
+   // Making AJAX calls here
+   componentDidMount() { //lifecycle hook
+      console.log('COMPONENT HAS MOUNTED IN RECORDS');
+      fetch('http://localhost:3001/mediumrare_database')
+      .then(response => console.log(response));
+
+
+   }
+
+
    render () {
       return (
          <div>

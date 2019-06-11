@@ -76,7 +76,7 @@ app.post('/mediumrare_database', async (req, res, next) => {
       pool.connect((err, client, done) => {
 
          // Can we do this another way?
-         const query = 'INSERT INTO user_info(name, email) VALUES($1, $2) RETURNING *';
+         const query = 'INSERT INTO user_info(name, email, password) VALUES($1, $2, $3) RETURNING *';
          const values = [data.name, data.email, data.password];
 
          client.query(query, values, (error, result) => {

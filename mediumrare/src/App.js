@@ -9,12 +9,17 @@ import Login from './Login/Login.js';
 import Register from './Register.js';
 
 class App extends Component {
+
+   componentDidMount() {
+      console.log('Component Has Mounted');
+   }
+
    render() {
       return (
          <Router>
             <div>
                <h2>Medium Rare Records</h2>
-               <nav className="main-nav w-100 navbar navbar-expand-lg navbar-dark bg-light">
+               <nav className="main-nav">
                   <ul>
                      <li><Link to={'/'} className="nav-link">Home</Link></li>
                      <li><Link to={'/Records'} className="nav-link">Records</Link></li>
