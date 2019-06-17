@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Home.js';
-import Records from './Records/Records.js';
+import RecordsContainer from './RecordsContainer';
+// import Records from './Records/index.js';
 import News from './News.js';
 import Artists from './Artists.js';
 import Login from './Login/Login.js';
@@ -10,9 +11,40 @@ import Register from './Register.js';
 
 class App extends Component {
 
-   componentDidMount() {
-      console.log('Component Has Mounted');
+   constructor() {
+      super();
+      this.state = {
+         records: []
+      }
    }
+
+   componentDidMount() {
+      console.log('COMPONENT HAS MOUNTED APP.JS');
+      this.getRecords()
+      .then(parsedRecords => {
+         this.setState({
+            records: parsedRecords.records
+         })
+      })
+   }
+
+   getRecords = async () => {
+      try {
+         const res = await fetch('http://localhost:3001/mediumrare_database', {
+            credentials: 'include',
+            method: 'GET'
+         })
+
+         //check server response
+         // if (!== res.status(200))
+
+         const recordsFind = await res.json()
+         return recordsFind
+
+      } catch (err) {
+
+      }
+   };
 
    render() {
       return (
@@ -31,7 +63,11 @@ class App extends Component {
                </nav>
                <Switch>
                   <Route exact path="/" component={Home} />
-                  <Route path="/Records" component={Records} />
+                  <Route path="/Records" render={() =>
+                     <RecordsContainer
+                        records={this.state.records}
+                     />}
+                  />
                   <Route path="/Artists" component={Artists} />
                   <Route path="/News" component={News} />
                   <Route path="/Login" component={Login} />
