@@ -92,7 +92,7 @@ app.post('/mediumrare_database', async (req, res, next) => {
          const values = [data.name, data.email, data.password];
 
          client.query(query, values, (error, result) => {
-            done();
+            console.log(result)
             if (error) {
                res.status(400).json({error});
             }
@@ -101,8 +101,10 @@ app.post('/mediumrare_database', async (req, res, next) => {
             });
          });
       });
+
       db.select('*').from('user_info').then(console.log());
       res.status(200).json('logging in')
+
    } catch (err) {
       res.json(err)
    }

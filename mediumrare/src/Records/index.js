@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
 // Functional component
-// Fetches all of our records
+// Displays all of our records
 
-const Record = (record) => {
+const findRecords = (record) => {
    console.log(record)
-      return(
+   return (
+      <div>
          <li>
             {record.record.title}
-            {record.record.artist}
          </li>
-      )
-}
+      </div>
+   )
+};
 
-
-export default Record;
+export default findRecords;
 
 // Use discogs api for images. Store images on the backend.
